@@ -14,26 +14,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
 <body>
     <script>
-        var str = "Please locate where 'locate' occurs!"
+        var str = "Please locates where 'locate' occurs!";
         var pos01 = str.indexOf("locate");
         var res = str.substring(7, 13);
-        var rep = str.replace("locate", "domastic");
+        var rep = str.replace("locate", "domestic");    
     </script>
     <div class="container">
-        <p>str.indexOf("locate"): <span id="demo01"></span></p>
-        <p>txt.length: <span id="demo02"></span></p>
-        <p>str.search("locate"): <span id="demo03"></span></p>
-        <p>str.replace("locate","domastic"): <span id="demo04" )></span></p>
+        str.indexOf("locate"): <span id="demo01"></span><br>
+        txt.length: <span id="demo02"></span><br>
+        str.search("locate"):<span id="demo03"></span><br>
+        str.replace("locate","domastic"): <span id="demo04"></span><br>
     </div>
-
     <script>
-        document.getElementById("demo01").innerHTML = pos01;
-        document.getElementById("demo02").innerHTML = str.length;
-        document.getElementById("demo03").innerHTML = res;
-        document.getElementById("demo04").innerHTML = rep;
+        document.getElementById("demo01").innerHTML = pos01; //변수 지정 (위치)
+        document.getElementById("demo02").innerHTML = str.length; //동일 문자 위치
+        document.getElementById("demo03").innerHTML = res; //문자열 자름
+        document.getElementById("demo04").innerHTML = rep; //동일 문자열 변경
     </script>
 </body>
 
