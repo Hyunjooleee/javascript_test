@@ -25,9 +25,9 @@
         var splitcommas = "a,b, c,|d, e";
         var splitspaces = "a,b, c,|d, e";
         var splitsign = "a,b, c,|d, e";
-        splitcommas.split(",");
-        splitspaces.split(" ");
-        splitsign.split("|");
+        var commas = splitcommas.split(",");
+        var space = splitspaces.split(" ");
+        var sign = splitsign.split("|");
     </script>
     <div class="container">txt.trim: <span id="demo06"></span><br>
         txt.splitcommas: <span id="demo07"></span><br>
@@ -36,9 +36,9 @@
     </div>
     <script>
         document.getElementById("demo06").innerHTML = trim;
-        document.getElementById("demo07").innerHTML = splitcommas[0];
-        document.getElementById("demo08").innerHTML = splitspaces[1];
-        document.getElementById("demo09").innerHTML = splitsign[2];
+        document.getElementById("demo07").innerHTML = commas[0];
+        document.getElementById("demo08").innerHTML = spaces[1];
+        document.getElementById("demo09").innerHTML = sign[2];
     </script>
 </body>
 

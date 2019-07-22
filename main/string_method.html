@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <script>
+            var sentence01 = "Hi, my name is Sam!"
+            var res01 = sentence01.substring(0,3);
+            var res02 = sentence01.substring(4,sentence01.length);
+
+            var str01 = "JavaScript Program to illustrate split() function"
+            str01.split(" ");
+            
+
+            var str02 = "10,20,30,40,50"
+            str02.split(",");
+
+        </script>
+    print("Hi,"):<span id="demo01"></span><br>
+    print("my name is Sam"):<span id="demo02"></span><br>
+    print("Hi, Sam!"):<span id="demo03"></span><br>
+    print("Sam"):<span id="demo04"></span><br><br>
+
+    print("JavaScript"):<span id="demo05"></span><br>
+    print("Program"):<span id="demo06"></span><br>
+    print("function"):<span id="demo07"></span><br><br>
+
+    print("10"):<span id="demo08"></span><br>
+    print("20"):<span id="demo09"></span><br>
+    print("30"):<span id="demo10"></span><br>
+
+    <script>
+        document.getElementById("demo01").innerHTML = res01;
+        document.getElementById("demo02").innerHTML = res02;
+
+        document.getElementById("demo05").innerHTML = str01[0];
+        document.getElementById("demo06").innerHTML = str01[1];
+        document.getElementById("demo07").innerHTML = str01[5];
+
+        document.getElementById("demo08").innerHTML = str02[0];
+        document.getElementById("demo09").innerHTML = str02[1];
+        document.getElementById("demo10").innerHTML = str02[2];
+    </script>
+    </body>
+</html>
