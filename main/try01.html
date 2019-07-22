@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    출력 : <span id="demo01"></span><br>
+    출력 : <span id="demo02"></span><br>
+    출력 : <span id="demo03"></span><br>
+    출력 : <span id="demo04"></span><br>
+    출력 : <span id="demo05"></span><br>
+    <script>
+        var sentence = "Hi, my name is Sam!";
+        document.getElementById("demo01").innerHTML = sentence.split(" ")[0];
+        document.getElementById("demo02").innerHTML = sentence.split(", ")[1];
+
+        var str = sentence.split(" ");
+        str = str[0].concat(" ", str[4]);
+        document.getElementById("demo03").innerHTML = str;
+
+        var pos1 = sentence.indexOf("name");
+        var pos2 = sentence.indexOf(" ", pos1);
+        document.getElementById("demo04").innerHTML = sentence.substring(pos1, pos2);
+
+        pos1 = sentence.indexOf("Sam");
+        pos2 = sentence.lastIndexOf("Sam");
+        document.getElementById("demo05").innerHTML = sentence.substring(pos1, pos2);
+    </script>
+    출력 : <span id="demo1"></span><br>
+    출력 : <span id="demo2"></span><br>
+    출력 : <span id="demo3"></span><br>
+    출력 : <span id="demo4"></span><br>
+    출력 : <span id="demo5"></span><br>
+    출력 : <span id="demo6"></span><br>
+    <script>
+        var str = 'JavaScript Program to illustrate split() function';
+        var i;
+        for (i = 0; i < str.length; i++) {
+            document.getElementById("demo" + (i + 1)).innerHTML = str.split(" ")[i];
+        }
+    </script>
+
+    출력 : <span id="demo7"></span><br>
+    출력 : <span id="demo8"></span><br>
+    출력 : <span id="demo9"></span><br>
+    출력 : <span id="demo10"></span><br>
+    출력 : <span id="demo11"></span><br>
+    <script>
+        var str = "10, 20, 30, 40, 50";
+        var x = 7;
+        for (i = 0; i < str.length; i++) {
+            document.getElementById("demo" + (i + x)).innerHTML = str.split(", ")[i];
+        }
+    </script>
+</body>
+
+</html>
