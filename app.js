@@ -12,6 +12,10 @@ router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/main/output.html'));
     //__dirname : It will resolve to your project folder.
 });
+router.get('/switch', function (req, res) {
+    res.sendFile(path.join(__dirname + '/main/switch.html'));
+    //__dirname : It will resolve to your project folder.
+});
 
 app.use('/', router);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
