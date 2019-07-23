@@ -17,5 +17,17 @@ router.get('/switch', function (req, res) {
     //__dirname : It will resolve to your project folder.
 });
 
+
+//현주
+router.get('/main/onsubmit', function (req, res) {
+    res.sendFile(path.join(__dirname + '/main/onsubmit.html'));
+});
+
+//값 받아오기
+router.get('/onsubmit', function (req, res) {
+    console.log(req.query);
+    res.send('Request parameters :'+req.query.name+','+req.query.password)
+    });
+
 app.use('/', router);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
