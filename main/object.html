@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="demo01"></p>
+        <script>
+            var person01={firstName:"John",lastName:"Doe",age:50,eyeColor:"blue"};
+            var x = person01.constructor(); x.age=10;
+            var person02={
+                firstName:"John", lastName:"Doe",
+                fullName:function(first,second){
+                    return this.firstName+" "+first+" "+second;
+                }
+            }    
+            document.getElementById("demo01").innerHTML=person01.firstName+" is "+person01.age+" years old";
+            person02.nationality="Korean";
+            delete person01.age;
+        </script>
+    </body>
+</html>
