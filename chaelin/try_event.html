@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function select_change(selectBox) {
+            var selected = selectBox.options[selectBox.selectedIndex].value;
+            document.getElementById("demo").innerHTML = selected;
+        }
+        function check_feild(field) {
+            var val = field.value;
+            var valName = field.name;
+            var str = valName + "feedback";
+            if (val == null || val == "") {
+                document.getElementById(str).innerHTML = "Please provide a valid " + valName;
+            }
+            else {
+                document.getElementById(str).innerHTML = "Looks good!"
+            }
+        }
+        function check(form) {
+            var form_ele = document.getElementsByTagName('input');
+            var i;
+            for (i = 0; i < form_ele.length; i++) {
+                check_feild(form_ele[i]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container mt-5 p-5 border">
+        <div class="row">
+            <div class="col-6">
+                <select onchange="select_change(this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="col-6">선택된 값: <span id="demo"></span></div>
+        </div>
+    </div>
+
+    <div class="container mt-5 p-5 border">
+        <form action="" onsubmit="check(this)">
+            <div class="form-row">
+                <div class="col-4">
+                    <small>First Name</small>
+                    <input type="text" class="form-control is-invalid" name="firstname" placeholder="First name">
+                    <div class="valid-feedback"><span id="firstnamefeedback"></span></div>
+                </div>
+                <div class="col-4">
+                    <small>Last Name</small>
+                    <input type="text" class="form-control is-invalid" placeholder="Last name">
+                    <div class="valid-feedback" name="lastnamefeedback"></div>
+                </div>
+                <div class="col-4">
+                    <small>user Name</small>
+                    <input type="text" class="form-control is-invalid" placeholder="User name">
+                    <div class="valid-feedback" name="usernamefeedback"></div>
+                </div>
+            </div>
+            <div class=" mt-4 form-row">
+                <div class="col-6">
+                    <input type="text" class="form-control is-invalid" placeholder="City">
+                    <div class="valid-feedback" name="Cityfeedback"></div>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control is-invalid" placeholder="State">
+                    <div class="valid-feedback" name="Statefeedback"></div>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control is-invalid" placeholder="Zip">
+                    <div class="valid-feedback" name="Zipfeedback"></div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+    </form>
+
+</body>
+
+</html>
