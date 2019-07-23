@@ -46,9 +46,10 @@
     출력 : <span id="demo6"></span><br>
     <script>
         var str = 'JavaScript Program to illustrate split() function';
+        str = str.split(" ");
         var i;
         for (i = 0; i < str.length; i++) {
-            document.getElementById("demo" + (i + 1)).innerHTML = str.split(" ")[i];
+            document.getElementById("demo" + (i + 1)).innerHTML = str[i];
         }
     </script>
 
@@ -59,9 +60,10 @@
     출력 : <span id="demo11"></span><br>
     <script>
         var str = "10, 20, 30, 40, 50";
+        str= str.split(", ");
         var x = 7;
         for (i = 0; i < str.length; i++) {
-            document.getElementById("demo" + (i + x)).innerHTML = str.split(", ")[i];
+            document.getElementById("demo" + (i + x)).innerHTML = str[i];
         }
     </script>
 </body>

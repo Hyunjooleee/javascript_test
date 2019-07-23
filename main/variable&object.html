@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <P id="demo"></P>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <script type="text/javascript">
+            var name="Ali";
+            var money;
+            money=2000.50;
+            document.getElementById("demo").innerHTML=typeof money;
+        </script>
+        <script>
+            var myVar = "global";
+            function checkscope(){
+                var myVar="local";
+                document.write(myVar);
+            }
+           document.getElementById("demo1").innerHTML=myVar;
+           document.getElementById("demo2").innerHTML=typeof checkscope;
+        </script>
+    </body>
+</html>
