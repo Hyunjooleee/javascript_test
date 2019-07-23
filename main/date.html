@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p id="demo01"></p>
+    <script>
+        document.getElementById("demo01").innerHTML = parseInt("10/33") + "<br>" +
+            parseInt("10 6") + "<br>" + parseInt("years 10");
+    </script>
+    <p id="demo02"></p>
+    <script>
+        var d = new Date();
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
+            "Sep", "Oct", "Nov", "Dec"];
+        document.getElementById("demo02").innerHTML = months[d.getMonth()];
+    </script>
+    <p id="demo03"></p>
+    <script>
+        document.getElementById("demo03").innerHTML = Math.random();
+    </script>
+</body>
+
+</html>
