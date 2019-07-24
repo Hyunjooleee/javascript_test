@@ -40,7 +40,7 @@ function compare(form) {
     var x_val = ele[0].value;
     var y_val = ele[1].value;
     var output = ele[2];
-    if (x_val > y_val){
+    if (x_val > y_val) {
         output.value = x_val;
         return false;
     }
@@ -78,11 +78,12 @@ function replace_string(form) {
     return false;
 }
 
-function f_func(form){
-    var id= form.id;
-    if(id=="compare")
+function f_func(form) {
+    var id = form.id;
+    if (id == "compare")
         return compare(form);
-    else if(id="substring")
+    else if (id = "substring")
         return substring_string(form);
-   return replace_string(form);
+    replace_string(form);
+    return replace_string(form);
 }
