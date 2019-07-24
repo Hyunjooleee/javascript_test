@@ -1,3 +1,4 @@
+/*
 function compare(x, y, id) {
     var x_val = document.getElementById(x).value;
     var y_val = document.getElementById(y).value;
@@ -32,8 +33,8 @@ function replace_string(text, t1, t2, id) {
     }
     document.getElementById(id).value = result;
 }
-/*
-매개변수가 form일때
+*/
+//매개변수가 form일때
 function compare(form) {
     var ele = form.getElementsByTagName("input");
     var x_val = ele[0].value;
@@ -76,4 +77,12 @@ function replace_string(form) {
     output.value = result;
     return false;
 }
-*/
+
+function f_func(form){
+    var id= form.id;
+    if(id=="compare")
+        return compare(form);
+    else if(id="substring")
+        return substring_string(form);
+   return replace_string(form);
+}

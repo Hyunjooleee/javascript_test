@@ -23,6 +23,20 @@
         <h1>Try-Function</h1>
         <div class="mt-3">
             <div class="border p-3">
+                <form name="form1" id="compare" onsubmit="return f_func(this)">
+                    <div class="form-group">
+                        f_compare(
+                        <input type="number" id="number1">
+                        ,<input type="number" id="number2">
+                        )
+                    </div>
+                    <div class="form-group">
+                        output: <input id="demo1" type="text" readonly>
+                    </div>
+                    <input type="submit" value="Compare"></button>
+                </form>
+
+                <!-- 
                 <form name="form1">
                     <div class="form-group">
                         f_compare(
@@ -35,23 +49,22 @@
                     </div>
                     <button type="button" onclick="compare('number1','number2','demo1')">Compare</button>
                 </form>
-
-                <!--    form을 변수로 보내는 버전
-                <form name="form1"onsubmit="return compare(this)">
-                    <div class="form-group">
-                        f_compare(
-                        <input type="number" id="number1">
-                        ,<input type="number" id="number2">
-                        )
-                    </div>
-                    <div class="form-group">
-                        output: <input id="demo1" type="text" readonly>
-                    </div>
-                    <input type="submit" value="Compare" ></button>
-                </form>
             -->
             </div>
             <div class="border mt-4 p-3">
+                <form name="form1" id="substring" onsubmit="return  f_func(this)">
+                    <div class="form-group">
+                        f_subStringWithText(
+                        <input type="text" class="col-4" id="text1">,
+                        <input type="text" class="col-4" id="text2">
+                        )
+                    </div>
+                    <div class="form-group">
+                        output: <input id="demo2" class="col-4" type="text" readonly>
+                    </div>
+                    <input type="submit" value="Click"></button>
+                </form>
+                <!--   
                 <form name="form1">
                     <div class="form-group">
                         f_subStringWithText(
@@ -64,23 +77,24 @@
                     </div>
                     <button type="button" onclick="substring_string('text1','text2','demo2')">Click</button>
                 </form>
-                <!--    form을 변수로 보내는 버전
-                <form name="form1" onsubmit="return substring_string(this)">
+                -->
+            </div>
+            <div class="border mt-4 p-3">
+                <form name="form1" id ="replace" onsubmit="return f_func(this)">
                     <div class="form-group">
-                        f_subStringWithText(
-                        <input type="text" class="col-4" id="text1">,
-                        <input type="text" class="col-4" id="text2">
+                        f_getTextAndreplace(
+                        <input type="text" class="col-3" id="str">,
+                        <input type="text" class="col-3" id="text01">,
+                        <input type="text" class="col-3" id="text02">
                         )
                     </div>
                     <div class="form-group">
-                        output: <input id="demo2" class="col-4" type="text" readonly>
+                        output: <input id="demo3" class="col-4" type="text" readonly>
                     </div>
                     <input type="submit" value="Click"></button>
                 </form>
-                -->
-
             </div>
-            <div class="border mt-4 p-3">
+            <!--   
                 <form name="form1">
                     <div class="form-group">
                         f_getTextAndreplace(
@@ -93,25 +107,7 @@
                         output: <input id="demo3" class="col-4" type="text" readonly>
                     </div>
                     <button type="button" onclick="replace_string('str','text01','text02','demo3')">Click</button>
-                </form>
-            </div>
-            <!--    form을 변수로 보내는 버전
-                
-                <div class="border mt-4 p-3">
-                <form name="form1" onsubmit="return replace_string(this)">
-                    <div class="form-group">
-                        f_getTextAndreplace(
-                        <input type="text" class="col-3" id="str">,
-                        <input type="text" class="col-3" id="text01">,
-                        <input type="text" class="col-3" id="text02">
-                        )
-                    </div>
-                    <div class="form-group">
-                        output: <input id="demo3" class="col-4"type="text" readonly>
-                    </div>
-                    <input type="submit" value="Click"></button>
-                </form>
-            </div>
+                </form>                
             -->
         </div>
     </div>
