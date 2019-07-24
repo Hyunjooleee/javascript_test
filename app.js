@@ -43,8 +43,8 @@ router.get('/ans_2', function (req, res) {
     +', '+req.query.username+', '+req.query.City+', '+req.query.State
     +', '+req.query.Zip)
 });
-router.get('/geo', function (req, res) {
-    res.sendFile(path.join(__dirname + '/main/geolocation.html'));
+router.get('/cookie', function (req, res) {
+    res.sendFile(path.join(__dirname + '/main/cookie.html'));
     //__dirname : It will resolve to your project folder.
 });
 app.use('/', router);
