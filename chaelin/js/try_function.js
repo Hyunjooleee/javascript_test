@@ -10,8 +10,7 @@ function compare(x, y, id) {
 function substring_string(t1, t2, id) {
     var str = document.getElementById(t1).value;
     var text = document.getElementById(t2).value;
-    str = str.split(text)[0];
-    document.getElementById(id).value = str;
+    document.getElementById(id).value = str.split(text)[0];
 }
 function replace_string(text, t1, t2, id) {
     var str = document.getElementById(text).value;
@@ -21,7 +20,7 @@ function replace_string(text, t1, t2, id) {
     t1 = t1.trim();
     t2 = t2.trim();
     for (i = 0; i < text.length; i++) {
-        if (text[i] == t1)
+        if (text[i] == t1) 
             result += t2;
         else if (text[i] == t2)
             result += t1;
