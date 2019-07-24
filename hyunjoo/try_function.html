@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+
+    <script>
+        function compare(){
+
+            var n1 = document.getElementById("num01").value;
+            var n2 = document.getElementById("num02").value;
+
+            if(n1 > n2){
+                result = n1;
+            }else if(n1 < n2){
+                result = n2;
+            }else{
+                result = "Same number";
+            }
+
+            document.getElementById("demo01").innerHTML = result;
+            return false;
+        }
+
+        function getTextAndoutput(){
+
+            var text = document.getElementById("inputText").value;
+            var word = document.getElementById("searchWord").value;
+
+            str = text.split(word)[0];
+
+            document.getElementById("demo02").innerHTML = str;
+            return false;
+        }
+
+        function replace(){
+            
+            var text = document.getElementById("inputText").value;
+            var w1 = document.getElementById("word01").value;
+            var w2 = document.getElementById("word02").value;
+            result ="";
+
+            str = text.split(" ");
+
+            for(i = 0; i < str.length; i++){
+                if(str[i] == w1){
+                    result += w2;
+                }else if(str[i] == w2){
+                    result += w1;
+                }else{
+                    result += str[i];
+                }
+                result += " ";
+            }
+
+            document.getElementById("demo03").innerHTML = result;
+            return false;
+
+        }
+    </script>
+
+</head>
+
+<body>    
+    <div class="container">
+        
+        <div> <!--크기 비교-->
+            <form name= "myform" onsubmit="return compare()">
+                <div class="form-group">
+                    <label>Compare</label>
+                    <input type="number" class="form-control" name= "num01" id="num01">
+                    <input type="number" class="form-control" name= "num02" id="num02">
+
+                    <span>output: </span><span id="demo01"></span>
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+
+        <div><!--동일단어 제외-->
+            <form name= "myform" onsubmit="return getTextAndoutput()">
+                <div class="form-group">
+                    <label>GetText And Output</label>
+                    <input type="text" class="form-control" name= "inputText" id="inputText">
+                    <input type="text" class="form-control" name= "searchWord" id="searchWord">
+
+                    <span>output: </span><span id="demo02"></span>
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+
+        <div><!-- 문자 위치 바꾸기-->
+            <form name= "myform" onsubmit="return replace()">
+                <div class="form-group">
+                    <label>Replace</label>
+                    <input type="text" class="form-control" name= "inputText" id="inputText">
+
+                    <input type="text" class="form-control" name= "word01" id="word01">
+                    <input type="text" class="form-control" name= "word02" id="word02">
+
+                    <span>output: </span><span id="demo03"></span>
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
