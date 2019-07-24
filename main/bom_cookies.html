@@ -33,13 +33,13 @@
         </script>
 
         <button onclick="setCookie('usermail,hjdjl7@naver.com',20)">setCookie</button>
-        <button onclick="getCookie()">getCookie</button>
+        <button onclick="getCookie(email, password)">getCookie</button>
 
         <div class="form-group">
-            <form class="form-control">
-                <input type="text" name="email">
-                <input type="pwd" name="password">
-                
+            <form class="form-control" onclick="getCookie()">
+                <input type="text" name="email" id="email">
+                <input type="pwd" name="password" id="password">
+
                 <input type="submit" class="btn btn-primary">
             </form>
         </div>
