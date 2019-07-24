@@ -1,33 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-    <head>
-
-    </head>
-    <body>
-        <script>
-            function func(){
-                var message,x;
-                message = document.getElementById("message");
-                message.innerHTML="";
-                x = document.getElementById("demo").value;
-                try{
-                    if(x=="") throw " is empty";
-                    if(isNaN(x)) throw " is not a number";
-                    x = Number(x);
-                    if(x>10) throw " is too high";
-                    if(x<5) throw " is too row";
-                }catch(err){
-                    message.innerHTML="input"+err;
-                }finally{
-                    document.getElementById("demo").value="";
-                }
-            }
-        </script>
-        <input id="demo" type="text"><p id="message"></p>
-        <button type="button" onclick="func()">Test input</button>
-    </body>
-=======
 
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -74,5 +46,4 @@
     </div>
 </body>
 
->>>>>>> daf038e61bcdef37e6d1fb2b696927dd99a4cc83
 </html>
