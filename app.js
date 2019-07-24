@@ -43,8 +43,8 @@ router.get('/ans_2', function (req, res) {
     +', '+req.query.username+', '+req.query.City+', '+req.query.State
     +', '+req.query.Zip)
 });
-router.get('/try_event', function (req, res) {
-    res.sendFile(path.join(__dirname + '/chaelin/try_event.html'));
+router.get('/geo', function (req, res) {
+    res.sendFile(path.join(__dirname + '/main/geolocation.html'));
     //__dirname : It will resolve to your project folder.
 });
 app.use('/', router);
