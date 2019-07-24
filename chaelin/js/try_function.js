@@ -82,8 +82,7 @@ function f_func(form) {
     var id = form.id;
     if (id == "compare")
         return compare(form);
-    else if (id = "substring")
+    else if (id == "substring")
         return substring_string(form);
-    replace_string(form);
     return replace_string(form);
 }
