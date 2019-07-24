@@ -13,8 +13,8 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src = "./js/try_function.js">
-       
+    <script src="./js/try_function.js">
+
     </script>
 </head>
 
@@ -60,11 +60,29 @@
                         )
                     </div>
                     <div class="form-group">
-                        output: <input id="demo3" class="col-4"type="text" readonly>
+                        output: <input id="demo3" class="col-4" type="text" readonly>
                     </div>
                     <button type="button" onclick="replace_string('str','text01','text02','demo3')">Click</button>
                 </form>
             </div>
+            <!--    form을 변수로 보내는 버전
+                
+                <div class="border mt-4 p-3">
+                <form name="form1" onsubmit="return replace_string(this)">
+                    <div class="form-group">
+                        f_getTextAndreplace(
+                        <input type="text" class="col-3" id="str">,
+                        <input type="text" class="col-3" id="text01">,
+                        <input type="text" class="col-3" id="text02">
+                        )
+                    </div>
+                    <div class="form-group">
+                        output: <input id="demo3" class="col-4"type="text" readonly>
+                    </div>
+                    <input type="submit" value="Click"></button>
+                </form>
+            </div>
+            -->
         </div>
     </div>
 </body>
