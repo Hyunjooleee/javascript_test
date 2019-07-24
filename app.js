@@ -22,6 +22,13 @@ router.get('/switch', function (req, res) {
 router.get('/main/onsubmit', function (req, res) {
     res.sendFile(path.join(__dirname + '/main/onsubmit.html'));
 });
+router.get('/hyunjoo/try_event', function (req, res) {
+    res.sendFile(path.join(__dirname + '/hyunjoo/try_event.html'));
+});
+router.get('/main/bom_cookies', function (req, res) {
+    res.sendFile(path.join(__dirname + '/main/bom_cookies.html'));
+});
+
 
 //값 받아오기
 router.get('/onsubmit', function (req, res) {

@@ -13,76 +13,114 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script>
+            function getSelectValue(frm){
+                frm.textValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].text;
+                frm.optionValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].value;
+            }
+        </script>
 </head>
 <body>
     <div class="container">
+        <form action="/try_event">
 
-        <script>
-            function bigform(){
-                var select =  document.getElementById("example01");
-
-                var selectvalue = select.options[select.selectedIndex].value;
-
-                 
-                document.getElementById("example01").innerHTML = select;
-
-                return select;
-            }
-        </script>
-        
-        <div><!-- 대분류-->
-            <div class="form-group">
-                <label for="example01">대분류:</label>
-                <select class="form-control" name="myform" id="example01" onchange="bigform()">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-        </div>
-
-        <span id="example01"></span>
-
-        <div><!--입력 오류-->
-            <script>
-                function firstnameform(){
-                    var firstname = document.myform.firstname.value;
-
-                    if(firstname == null || firstname == ""){
-                        var strvalidation01 = "First name can't be blank";
-                        document.getElementById("demo01").innerHTML = strvalidation01;
-                        return false;
-                    }
-                    return true;
-                }
-                
-            </script>
-
-            <span id="demo01"></span><br>
-
+            <h3>대분류</h3><br>
             <form>
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer01">First name</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer01">First name</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <select class= "form-control" name="selectBox" onChange="getSelectValue(this.form);">
+                        <option value="option1">1</option>
+                        <option value="option2">2</option>
+                        <option value="option3">3</option>
+                        <option value="option4">4</option>
+                    </select><br>
+                    선택: <input type="text" name="textValue">&nbsp;&nbsp;
                 </div>
             </form>
+            
+
+            <div><!--입력 오류-->
+                <script>
+                    function firstnameform(){
+                        var firstname = document.myform.firstname.value;
+
+                        if(firstname == null || firstname == ""){
+                            var strvalidation01 = "First name can't be blank";
+                            document.getElementById("demo01").innerHTML = strvalidation01;
+                            return false;
+                        }
+                        return true;
+                    }
+                    
+                </script>
+
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationServer01">First name</label>
+                            <input type="text" class="form-control is-valid" id="demo01" placeholder="First name" value="Hyunjoo" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                            <div class="col-md-4 mb-3">
+                            <label for="validationServer02">Last name</label>
+                            <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Lee" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                                <label for="validationServerUsername">Username</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                                    <div class="invalid-feedback">
+                                        Please choose a username.
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                        
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationServer03">City</label>
+                                <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid city.
+                                </div>
+                            </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer04">State</label>
+                            <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+                            <div class="invalid-feedback">
+                            Please provide a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer05">Zip</label>
+                            <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+                            <div class="invalid-feedback">
+                            Please provide a valid zip.
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                            <label class="form-check-label" for="invalidCheck3">
+                            Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                            You must agree before submitting.
+                            </div>
+                        </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </form>
 
 
-        </div>
-    
+            </div>
+        </form>
     </div>
 </body>
 
