@@ -44,7 +44,7 @@ router.get('/ans_2', function (req, res) {
     +', '+req.query.Zip)
 });
 router.get('/cookie', function (req, res) {
-    res.sendFile(path.join(__dirname + '/main/cookie.html'));
+    res.sendFile(path.join(__dirname + '/chaelin/cookie.html'));
     //__dirname : It will resolve to your project folder.
 });
 app.use('/', router);
