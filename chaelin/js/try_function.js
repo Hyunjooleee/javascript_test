@@ -36,10 +36,9 @@ function replace_string(text, t1, t2, id) {
 */
 //매개변수가 form일때
 function compare(form) {
-    var ele = form.getElementsByTagName("input");
-    var x_val = ele[0].value;
-    var y_val = ele[1].value;
-    var output = ele[2];
+    var x_val = form.number1.value;
+    var y_val = form.number2.value;
+    var output = form.demo1;
     if (x_val > y_val) {
         output.value = x_val;
         return false;
@@ -49,19 +48,17 @@ function compare(form) {
 }
 
 function substring_string(form) {
-    var ele = form.getElementsByTagName("input");
-    var str = ele[0].value;
-    var text = ele[1].value;
-    ele[2].value = str.split(text)[0];
+    var str = form.text1.value;
+    var text = form.text2.value;
+    form.demo2.value = str.split(text)[0];
     return false;
 }
 
 function replace_string(form) {
-    var ele = form.getElementsByTagName("input");
-    var str = ele[0]; str = str.value;
-    var t1 = ele[1]; t1 = t1.value;
-    var t2 = ele[2]; t2 = t2.value;
-    var output = ele[3];
+    var str = form.str.value;
+    var t1 = form.text01.value;
+    var t2 = form.text02.value;
+    var output = form.demo3;
     var text = str.split(" "), i, result = "";
     t1 = t1.trim();
     t2 = t2.trim();
