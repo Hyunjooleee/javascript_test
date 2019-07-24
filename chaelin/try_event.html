@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function select_change(selectBox) {
+            var selected = selectBox.options[selectBox.selectedIndex].value;
+            document.getElementById("demo").innerHTML = selected;
+        }
+        function check_feild(field) {
+            var val = field.value;
+            var valName = field.name;
+            var valId = field.id;
+            var str = valName + "feedback";
+            var ele = document.getElementById(str), form_ele = document.getElementById(valId);
+            if (val == null || val == "") {
+                ele.innerHTML = "Please provide a valid " + valName;
+                ele.classList.replace("valid-feedback", "invalid-feedback");
+                form_ele.classList.replace("is-valid", "is-invalid");
+                return false;
+            }
+            else {
+                ele.innerHTML = "Looks good!";
+                ele.classList.replace("invalid-feedback", "valid-feedback");
+                form_ele.classList.replace("is-invalid", "is-valid");
+                return true;
+            }
+        }
+        function check(form) {
+            var form_ele = document.getElementsByTagName('input');
+            var i, result = true, r = true;
+            for (i = 0; i < form_ele.length - 1; i++) {
+                r = check_feild(form_ele[i]);
+                if (r == false)
+                    result = false;
+            }
+            return result;
+        }
+    </script>
+</head>
+
+<body onload="check(this.form)">
+    <div class="container mt-5 p-5 border">
+        <div class="row">
+            <div class="col-6">
+                <select onchange="select_change(this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="col-6">선택된 값: <span id="demo"></span></div>
+        </div>
+    </div>
+
+    <div class="container mt-5 p-5 border">
+        <form action="/ans_2" id="form1" onchange="return check(this)" onsubmit="return check(this)">
+            <div class="form-row">
+                <div class="col-4">
+                    <small>First Name</small>
+                    <input type="text" class="form-control is-invalid" id="firstname" name="firstname"
+                        placeholder="First name">
+                    <div class="invalid-feedback" id="firstnamefeedback"></div>
+                </div>
+                <div class="col-4">
+                    <small>Last Name</small>
+                    <input type="text" class="form-control is-invalid" id="lastname" name="lastname"
+                        placeholder="Last name">
+                    <div class="invalid-feedback" id="lastnamefeedback"></div>
+                </div>
+                <div class="col-4">
+                    <small>user Name</small>
+                    <input type="text" class="form-control is-invalid" id="username" name="username"
+                        placeholder="User name">
+                    <div class="invalid-feedback" id="usernamefeedback"></div>
+                </div>
+            </div>
+            <div class=" mt-4 form-row">
+                <div class="col-6">
+                    <input type="text" class="form-control is-invalid" id="City" name="City" placeholder="City">
+                    <div class="invalid-feedback" id="Cityfeedback"></div>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control is-invalid" id="State" name="State" placeholder="State">
+                    <div class="invalid-feedback" id="Statefeedback"></div>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control is-invalid" id="Zip" name="Zip" placeholder="Zip">
+                    <div class="invalid-feedback" id="Zipfeedback"></div>
+                </div>
+            </div>
+
+        </form>
+        <form>
+            <div class="form-group mt-4">
+                <div class="form-check">
+                    <input class="form-check-input is-invalid" type="checkbox" value="" name="check" id="check"
+                        required>
+                    <label class="form-check-label" for="check">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        <span id="checkfeedback">You must agree before submitting.</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="mt-4">
+            <input type="submit" form="form1" class="btn btn-primary">
+        </div>
+    </div>
+    </form>
+
+</body>
+
+</html>

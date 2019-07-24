@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/main/event_onsubmit.html'));
+    res.sendFile(path.join(__dirname + '/index.html'));
     //__dirname : It will resolve to your project folder.
 });
 router.get('/switch', function (req, res) {
@@ -39,6 +39,17 @@ router.get('/onsubmit', function (req, res) {
 router.get('/ans', function (req, res) {
     console.log(req.query);
     res.send('Request parameters : '+req.query.name+', '+req.query.password)
+});
+
+router.get('/ans_2', function (req, res) {
+    console.log(req.query);
+    res.send('Request parameters : '+req.query.firstname+', '+req.query.lastname
+    +', '+req.query.username+', '+req.query.City+', '+req.query.State
+    +', '+req.query.Zip)
+});
+router.get('/try_event', function (req, res) {
+    res.sendFile(path.join(__dirname + '/chaelin/try_event.html'));
+    //__dirname : It will resolve to your project folder.
 });
 app.use('/', router);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
