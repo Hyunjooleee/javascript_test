@@ -18,11 +18,13 @@
 <body>
     <div class="container">
         <script>
-            function setCookie(cname, cvalue, exdays){
+            function setCookie(cvalue, exdays){
                 var d = new Date();
                 d.setTime(d.getTime()+(exdays*24*60*60*1000));
                 var expires = "expires=" + d.toGMTString();
-                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+
+                cvalue = document.getElementById("email").value;
+                document.cookie = " Email =" + cvalue + ";" + expires + ";path=/";
                 alert(document.cookie);
             }
             function getCookie(){
@@ -32,17 +34,17 @@
             }    
         </script>
 
-        <button onclick="setCookie('usermail,hjdjl7@naver.com',20)">setCookie</button>
-        <button onclick="getCookie(email, password)">getCookie</button>
-
-        <div class="form-group">
-            <form class="form-control" onclick="getCookie()">
-                <input type="text" name="email" id="email">
-                <input type="pwd" name="password" id="password">
-
-                <input type="submit" class="btn btn-primary">
-            </form>
-        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id= "email" placeholder ="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button onclick="setCookie()" type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
         
     </div>
