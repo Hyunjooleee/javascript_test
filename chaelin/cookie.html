@@ -25,7 +25,7 @@
         }
         function getCookie(body) {
             var decodedCookie = decodeURIComponent(document.cookie);
-            if (decodedCookie == "") return;                   //저장된 이메일일 없을 경우 
+            if (decodedCookie == "") return;                   //저장된 이메일이 없을 경우 
             var ca = decodedCookie.split(";"); var i;
             var form = body.form1;
             for (i = 0; i < ca.length; i++) {
