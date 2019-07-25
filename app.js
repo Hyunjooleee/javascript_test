@@ -41,7 +41,7 @@ router.get('/onsubmit', function (req, res) {
 //채린
 router.get('/ans', function (req, res) {
     console.log(req.query);
-    res.send('Request parameters : '+req.query.name+', '+req.query.password)
+    res.send('Request parameters : '+req.query.email+', '+req.query.password)
 });
 
 router.get('/ans_2', function (req, res) {
