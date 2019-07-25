@@ -12,28 +12,26 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-
-        <script>
-            $(function(){
-                $("p").on({
-                    mouseenter:function(){
-                        $(this).css("background-color","lightgray"); //this는 p를 가리킴
-                    },
-                    mouseleave:function(){
-                        $(this).css("background-color","lightblue");
-                    },
-                    click:function(){
-                        $(this).css("background-color","yellow");
-                    }
-                });
-            });
-        </script>
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    <div class="container">
-        <p>Click or mive the mouse pointer over this paragragh.</p>
-    </div>
-</body>
 
+<body>
+    <script>
+        $(function(){
+            $("p,h1").on({
+                mouseenter:function(){
+                    $(this).css("background-color","pink");
+                },
+                mouseleave:function(){
+                    $(this).css("background-color","lightblue");
+                },
+                mousedown:function(){
+                    $(this).css("background-color","yellow");
+                }
+            });
+        });
+    </script>
+</body>
+    <h1>dfdf</h1>
+    <p>Hi there</p>
 </html>

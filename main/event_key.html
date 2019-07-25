@@ -12,31 +12,27 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-
-        <script>
-            $(document).on("keypress", function (event) {
-                if (event.which == 13) {
-                    alert('You pressed enter!');
-                }
-            });
-
-            $().ready(function () {
-                $('#textbox').keyup(function (event) {
-                    $('#msg-keyup').html('keyup() is triggered!, keyCode =' + event.which)
-                });
-                $('#textbox').keydown(function (event) {
-                    $('#msg-keydown').html('keydown() is triggered!, keyCode =' + event.which)
-                });
-            });
-        </script>
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="container">
-        <input type="text" id="textbox">
-        <p id="msg-keydown"></p>
-        <p id="msg-keyup"></p>
-    </div>
+    <input type="text" id="textbox">
+    <p id="msg-keyup"></p>
+    <script>
+        $(document).ready(function(){
+            $(this).keypress(function(e){
+                if (e.which == 13) {
+                    alert("you pressed enter");
+                }
+            })
+        });
+         
+        $().ready(function () {
+            $("#textbox").keyup(function (e) {
+                $("#msg-keyup").html('keyup() is triggered!, keyCode=' + e.keyCode);
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -13,19 +13,27 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script>
-        $(document).ready(function () {
-            $("span").mouseenter(f_one);
-        });
-        var f_one = function x() {
-            alert("You entered span!");
-        }
-    </script>
 </head>
 
 <body>
-    <span>Here! :)</span>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "grey");
+            });
+            $("input").change(function () {
+                $(this).css("background-color", "green");
+            });
+        });
+    </script>
+    <div class="container">
+        <h1>jquery event - focus, blur</h1>
+        <form>
+            <div class="form-group form-row mt-5">
+                Name:  <input type="text" class="col-7 form-control"name="fullname">
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>

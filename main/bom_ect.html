@@ -13,19 +13,24 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script>
-        $(document).ready(function () {
-            $("span").mouseenter(f_one);
-        });
-        var f_one = function x() {
-            alert("You entered span!");
-        }
-    </script>
 </head>
 
 <body>
-    <span>Here! :)</span>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <form>
+        <input type="text">
+        <input type="submit">
+    </form>
+    <button type="button" onclick="goMoving(); return false">btn</button>
+    <script>
+        document.getElementById("demo").innerHTML = "Screen height is " + screen.height +
+            ", Screen width is " + screen.width;
+        function goMoving() {
+            window.history.back();
+        }
+        document.getElementById("demo2").innerHTML = navigator.language;
+    </script>
 </body>
 
 </html>

@@ -41,7 +41,7 @@ router.get('/onsubmit', function (req, res) {
 //채린
 router.get('/ans', function (req, res) {
     console.log(req.query);
-    res.send('Request parameters : '+req.query.name+', '+req.query.password)
+    res.send('Request parameters : '+req.query.email+', '+req.query.password)
 });
 
 router.get('/ans_2', function (req, res) {
@@ -50,8 +50,8 @@ router.get('/ans_2', function (req, res) {
     +', '+req.query.username+', '+req.query.City+', '+req.query.State
     +', '+req.query.Zip)
 });
-router.get('/try_event', function (req, res) {
-    res.sendFile(path.join(__dirname + '/chaelin/try_event.html'));
+router.get('/cookie', function (req, res) {
+    res.sendFile(path.join(__dirname + '/chaelin/cookie.html'));
     //__dirname : It will resolve to your project folder.
 });
 app.use('/', router);

@@ -15,17 +15,21 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script>
+        var f_hide = function f_hide() { $("p").hide() };
+        var f_click = function f_click(x) { $("button").click(x) };
         $(document).ready(function () {
-            $("span").mouseenter(f_one);
+            f_click(f_hide);
         });
-        var f_one = function x() {
-            alert("You entered span!");
-        }
     </script>
 </head>
 
 <body>
-    <span>Here! :)</span>
+    <div class="container">
+        <button class="btn btn-success">
+            Button
+        </button>
+        <p>hi there</p>
+    </div>
 </body>
 
 </html>
