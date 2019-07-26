@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        $().ready(function () {
+            $("#b1").click(function () {
+                $("#test1").text($("#setValue").val());
+            });
+            $("#b2").click(function () {
+                $("#test2").html($("#setValue").val());
+            });
+            $("#b3").click(function () {
+                $("#test3").val($("#setValue").val());
+            });
+            $("#lab").click(function () {
+                $("#demo1").attr("href",$("#setValue").val());
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Content-Get</h2>
+        <h4>Content</h4>
+        <div class="border p-3 my-3">
+            <p id="test1">This is a paragraph.</p>
+            <p id="test2">This is another paragraph.</p>
+            <p><input type="text" id="test3" value="value"></p>
+            <p><a href="https://www.yojulab.com" id="#demo1">link</a></p>
+        </div>
+        <h4>Set</h4>
+        <div class="border p-3 my-3">
+            <input type="text" id="setValue">
+        </div>
+        <button class="btn btn-light" id="b1">Set Text</button>
+        <button class="btn btn-light" id="b2">Set HTML</button>
+        <button class="btn btn-light" id="b3">Set Value</button>
+        <button class="btn btn-light" id="lab">Set Attribute</button>
+    </div>
+</body>
+
+</html>

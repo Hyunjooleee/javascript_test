@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function btn01(code) {
+            var p1 = $("#p01");
+            var p2 = $("#p02");
+            switch (code) {
+                case "01":
+                    p1.html("");
+                    break;
+                case "02":
+                    p1.html(p2.html());
+                    break;
+                case "03":
+                    p1.html(p1.html() + p2.html());
+                    break;
+                default:
+                    break;
+            }
+        }
+        function btn02(code) {
+            var output = $("#getValue");
+            switch (code) {
+                case "01":
+                    output.val($("#name").val());
+                    break;
+                case "02":
+                    output.val($("#comment").val());
+                    break;
+                case "03":
+                    output.val( $("#city").val());
+                    break;
+                default:
+                    break;
+            }
+        }
+        function btn03(){
+            var checks = form1.getElementsByTagName("input");
+            var i;
+            for(i=0;i<checks.length;i++){
+                if(checks[i].checked){
+                    checks[i].checked=false;
+                }
+                else{
+                    checks[i].checked=true;
+                }
+            }
+        }
+        function buttons(btn) {
+            var btnId = btn.id.substring(0, 2);
+            switch (btnId) {
+                case "b1":
+                    var btnCode = btn.id.substring(2, 4);
+                    btn01(btnCode);
+                    break;
+                case "b2":
+                    var btnCode = btn.id.substring(2, 4);
+                    btn02(btnCode);
+                    break;
+                case "b3":
+                    btn03(btn);
+                    break;
+                default:
+                    break;
+            }
+        }
+        $().ready(function () {
+            $("button").click(function () {
+                buttons(this);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container m-auto">
+        <h1>Try - content get/set</h1>
+        <!--1번-->
+        <div class="container border p-4 m-2">
+            <div class="my-2">
+                <button id="b101" class="btn btn-light">삭제</button>
+                <button id="b102" class="btn btn-light">생성</button>
+                <button id="b103" class="btn btn-light">합치기</button>
+            </div>
+            <p id="p01">Text01</p>
+            <p id="p02">Digital Dream Academy</p>
+        </div>
+
+        <!--2번-->
+        <div class="container border p-4 m-2">
+            <!--name-->
+            <div class="form-row">
+                <div class="col-4">Name:</div>
+                <div class="col-8"><input type="text" id="name" class="form-control"></div>
+            </div>
+            <!--comment-->
+            <div class="form-row mt-3">
+                <div class="col-4">Comment:</div>
+                <div class="col-8"><textarea id="comment" class="form-control"></textarea>
+                </div>
+            </div>
+            <!--city-->
+            <div class="form-row mt-3">
+                <div class="col-4">City:</div>
+                <div class="col-8">
+                    <select class="custom-select" id="city">
+                        <option value="Paris">Paris</option>
+                        <option value="London">London</option>
+                        <option value="Seoul">Seoul</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row justify-content-around mt-3">
+                <button id="b201" class="col-3 btn btn-primary form-control">Get Name</button>
+                <button id="b202" class="col-3 btn btn-primary form-control">Get Comment</button>
+                <button id="b203" class="col-3 btn btn-primary form-control">Get City</button>
+            </div>
+            <div class="form-row mt-3">
+                <div class="col-4">Content:</div>
+                <div class="col-8"><input type="text" id="getValue" class="form-control" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!--3번-->
+        <div class="container border p-4 m-2">
+            <div class="form-group">
+                <form name="form1">
+                    <p><input id="1"type="checkbox">Arduino</p>
+                    <p><input id="2" type="checkbox">Android</p>
+                    <p><input id="3" type="checkbox">AI</p>
+                    <p><input id="4" type="checkbox">Big Data</p>
+                </form>
+            </div>
+            <button id="b3" class="btn btn-primary form-control">All Check Toggle</button>
+        </div>
+    </div>
+</body>
+
+</html>
